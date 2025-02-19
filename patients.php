@@ -1,5 +1,5 @@
 <?php
-$profileImage = ""; 
+$profileImage = "img/hehe.jpg"; 
 $adminName = "Admin01";
 $patients = [
     [
@@ -57,7 +57,7 @@ $patients = [
             flex-direction: column;
         }
 
-        .profile-icon {
+        .profile-icon img{
             width: 100px;
             height: 100px;
             background-color: white;
@@ -251,7 +251,7 @@ $patients = [
             <div class="search-bar">
                 <input type="text" placeholder="Search">
                 <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-                <button><i class="fa-solid fa-user-plus"></i>Add Patient</button>
+                <a href="addpatient.php"><button> <i class="fa-solid fa-user-plus"></i>Add Patient</button></a>
             </div>
         </nav>
 
