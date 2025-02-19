@@ -96,6 +96,7 @@ $adminName = 'Admin01';
             font-size: 35px;
             font-weight: 600;
             margin-left: 30px;
+            color: #176B87;
         }
 
         header {
@@ -123,7 +124,7 @@ $adminName = 'Admin01';
             display: flex;
             justify-content: center;
             align-items: center;
-            /* margin-top: 30px; */
+            margin-top: 30px;
         }
 
         .main{
@@ -213,17 +214,14 @@ $adminName = 'Admin01';
     </div>
     <div class="main-content">
         <header>
-            <h1>Patient Management</h1>
-        </header>
-
-        <div class="title">
             <h1>Add Patient</h1>
-        </div>
+        </header>
         
         <section>
             
         <div class="main">
             <div class="container">
+                
         <div class="forms">
             <label for="first_name">First Name:</label>
             <input type="text" id="first_name" name="first_name">
