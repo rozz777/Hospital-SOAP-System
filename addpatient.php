@@ -12,9 +12,9 @@ $adminName = 'Admin01';
     <title>Add Patient</title>
 
     <style>
-            @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-          * {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -80,7 +80,6 @@ $adminName = 'Admin01';
             padding: 10px;
         }
 
-
         aside ul li i {
             font-size: 26px;
         }
@@ -91,6 +90,7 @@ $adminName = 'Admin01';
             box-sizing: border-box;
             overflow-y: auto;
         }
+        
         .title h1{
             margin-top: 30px;
             font-size: 35px;
@@ -218,46 +218,41 @@ $adminName = 'Admin01';
         </header>
         
         <section>
-            
-        <div class="main">
-            <div class="container">
-                
-        <div class="forms">
-            <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name">
+            <div class="main">
+                <div class="container">
+                    <div class="forms">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" id="first_name" name="first_name">
 
-            <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" id="last_name" name="last_name">
 
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob">
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age">
 
-            <label for="sex">Sex:</label>
-            <select id="sex" name="sex">
-                <option value="" selected disabled>Select</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-            </select>
+                        <label for="sex">Sex:</label>
+                        <select id="sex" name="sex">
+                            <option value="" selected disabled>Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
 
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address">
 
-            <label for="contact">Contact Number:</label>
-            <input type="tel" id="contact" name="contact">
-        </div>
-        <div class="buttons">
-            <!-- <button id="cancel">Cancel</button> -->
-            <button id="save">Save</button>
-        </div>
-    </div>
-        </div>
-
-</section>
-
+                        <label for="contact">Contact Number:</label>
+                        <input type="tel" id="contact" name="contact">
+                    </div>
+                    <div class="buttons">
+                        <button id="save">Save</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
