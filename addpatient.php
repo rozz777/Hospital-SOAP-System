@@ -183,8 +183,13 @@ $adminName = 'Admin01';
         }
 
         .buttons #save{
-            background-color: green;
+            background-color: #0B9C2AFF;
             color: white;
+            padding: 10px 20px;
+        }
+
+        .buttons #save:hover{
+            background-color: #046E16FF;
         }
 
     </style>
