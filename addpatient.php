@@ -1,5 +1,5 @@
 <?php
-$profileImage = ""; 
+$profileImage = "img/hehe.jpg"; 
 $adminName = 'Admin01';
 ?>
 
@@ -8,7 +8,8 @@ $adminName = 'Admin01';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Add Patient</title>
 
     <style>
             @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
@@ -46,7 +47,7 @@ $adminName = 'Admin01';
             flex-direction: column;
         }
 
-        .profile-icon {
+        .profile-icon img {
             width: 100px;
             height: 100px;
             background-color: white;
@@ -64,8 +65,8 @@ $adminName = 'Admin01';
             padding: 0;
         }
 
-        aside ul li:hover{
-            border-bottom: 1px solid white;
+        aside ul li a:hover{
+            color: #ccc;
         }
 
         aside ul li {
@@ -89,6 +90,12 @@ $adminName = 'Admin01';
             padding: 20px 50px;
             box-sizing: border-box;
             overflow-y: auto;
+        }
+        .title h1{
+            margin-top: 30px;
+            font-size: 35px;
+            font-weight: 600;
+            margin-left: 30px;
         }
 
         header {
@@ -116,12 +123,21 @@ $adminName = 'Admin01';
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
+            /* margin-top: 30px; */
+        }
+
+        .main{
+            background-color: #C0D7E2FF;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border: 1px solid white;
+            border-radius: 15px;    
         }
 
         .container {
-            background-color: #e0ebf0;
-            padding: 25px 40px;
+            background-color: #E8F3F8FF;
+            padding: 30px 40px;
             border: 1px solid gray;
             border-radius: 15px;
             width: 100%;
@@ -129,6 +145,7 @@ $adminName = 'Admin01';
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            margin: 30px;
         }
 
         .forms {
@@ -145,7 +162,7 @@ $adminName = 'Admin01';
         .forms input, .forms select {
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 16px;
             width: 100%;
         }
@@ -198,9 +215,15 @@ $adminName = 'Admin01';
         <header>
             <h1>Patient Management</h1>
         </header>
+
+        <div class="title">
+            <h1>Add Patient</h1>
+        </div>
         
         <section>
-    <div class="container">
+            
+        <div class="main">
+            <div class="container">
         <div class="forms">
             <label for="first_name">First Name:</label>
             <input type="text" id="first_name" name="first_name">
@@ -229,11 +252,11 @@ $adminName = 'Admin01';
             <input type="tel" id="contact" name="contact">
         </div>
         <div class="buttons">
-            <button id="cancel">Cancel</button>
+            <!-- <button id="cancel">Cancel</button> -->
             <button id="save">Save</button>
         </div>
-
     </div>
+        </div>
 
 </section>
 
