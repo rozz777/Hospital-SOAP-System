@@ -1,30 +1,33 @@
 <?php
+$profileImage = 'img/hehe.jpg.';
+$adminName = 'Admin01';
 
-$host = "localhost";
-$user = "root"; 
-$password = "";
-$database = "dbappointmentmanagement";
+// $host = "localhost";
+// $user = "root"; 
+// $password = "";
+// $database = "dbappointmentmanagement";
 
-$conn = new mysqli($host, $user, $password, $database);
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// $conn = new mysqli($host, $user, $password, $database);
 
 
-$sql = "SELECT a.id, a.patient_name, a.contact_number, a.appointment_date, a.appointment_time, a.status, 
-               COALESCE(d.name, 'N/A') AS doctor_name, COALESCE(s.name, 'N/A') AS specialty
-        FROM appointments a
-        LEFT JOIN doctors d ON a.doctor_id = d.id
-        LEFT JOIN specialties s ON a.specialty_id = s.id
-        ORDER BY a.appointment_date, a.appointment_time";
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
 
-$result = $conn->query($sql);
 
-if (!$result) {
-    die("Query failed: " . $conn->error);
-}
+// $sql = "SELECT a.id, a.patient_name, a.contact_number, a.appointment_date, a.appointment_time, a.status, 
+//                COALESCE(d.name, 'N/A') AS doctor_name, COALESCE(s.name, 'N/A') AS specialty
+//         FROM appointments a
+//         LEFT JOIN doctors d ON a.doctor_id = d.id
+//         LEFT JOIN specialties s ON a.specialty_id = s.id
+//         ORDER BY a.appointment_date, a.appointment_time";
+
+// $result = $conn->query($sql);
+
+// if (!$result) {
+//     die("Query failed: " . $conn->error);
+// }
+
 
 ?>
 
@@ -33,57 +36,143 @@ if (!$result) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Appointment Management</title>
     <style> 
+    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f8f9fa;
-    }
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Lexend", serif;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+        }
 
     .sidebar {
-        width: 250px;
-        height: 100vh;
-        background-color: #1f677a;
-        color: white;
-        padding: 20px;
-        position: fixed;
-    }
+            width: 320px;
+            background-color: #176B87;
+            color: white;
+            padding: 15px;
+            height: 100%;
+            box-sizing: border-box;
+            text-wrap: nowrap;
+        }
 
-    .sidebar h4 {
-        text-align: center;
-    }
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            justify-content: center;
+            flex-direction: column;
+        }
 
-    .sidebar .nav {
-        list-style-type: none;
-        padding: 0;
-    }
+        .profile-icon img{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
 
-    .sidebar .nav-item {
-        margin: 10px 0;
-    }
+        .profile-name {
+            font-size: 18px;
+            padding-top: 10px;
+        }
 
-    .sidebar .nav-item a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        padding: 10px;
-        border-radius: 5px;
-    }
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
 
-    .sidebar .nav-item a:hover {
-        background-color: #145060;
-    }
+        aside ul li:hover{
+            border-bottom: 1px solid white;
+        }
+
+        aside ul li {
+            padding: 25px 10px;
+        }
+
+        aside ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            padding: 10px;
+        }
 
 
-    .main-content {
-        margin-left: 270px;
-        flex: 1;
-        padding-left: 40px;
-        
-    }
+        aside ul li i {
+            font-size: 26px;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px 50px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #176B87;
+            padding: 20px;
+            color: white;
+            border-radius: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar i {
+            padding-right: 10px;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 10px;
+            width: 15rem;
+            font-size: 14px;
+            border: 2px solid gray;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #176B87;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 14px;
+            box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .search-bar button:hover {
+            background-color: #09546DFF;
+        }
 
 
     table {
@@ -123,7 +212,7 @@ if (!$result) {
     .text-success { color: green; }
     .text-danger { color: red; }
 
-    .search-container {
+    /* .search-container {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -148,9 +237,9 @@ if (!$result) {
 
     .search-btn:hover {
         background-color: #145060;
-    }
+    } */
 
-    .add-btn {
+    /* .add-btn {
         background-color: #1f677a;
         color: white;
         padding: 10px 15px;
@@ -165,29 +254,45 @@ if (!$result) {
 
     .add-btn:hover {
         background-color: #145060;
-    }
+    } */
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h4>Admin01</h4>
-        <ul class="nav">
-            <li class="nav-item"><a href="#">Patient Management</a></li>
-            <li class="nav-item"><a href="#">Appointments</a></li>
-            <li class="nav-item"><a href="#">SOAP Notes</a></li>
-            <li class="nav-item"><a href="#">Settings</a></li>
-        </ul>
-    </div>
-
-    <div class="main-content">
-        <h2>Appointments</h2>
-        <div class="search-container">
-            <input type="text" id="search" class="search-input" placeholder="Search by Email or Name">
-            <button class="search-btn">🔍 Search</button>
-            <button class="add-btn">➕ Add Appointment</button>
+<div class="sidebar">
+        <div class="profile">
+            <div class="profile-icon">
+                <img src="<?php echo $profileImage; ?>" alt="Profile Image">
+            </div>
+            <div class="profile-name"><?php echo $adminName; ?></div>
         </div>
+        <aside>
+            <ul>
+                <li><i class="fa-solid fa-hospital-user" style="color: #ffffff;"></i>
+                <a href="#">Patient Management</a></li>
+                <li><i class="fa-solid fa-calendar-check" style="color: #ffffff;"></i>
+                <a href="#">Appointments</a></li>
+                <li><i class="fa-solid fa-notes-medical" style="color: #ffffff;"></i>
+                <a href="#">SOAP Notes</a></li>
+                <li><i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                <a href="#">Settings</a></li>
+                <li><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+                <a href="#">Logout</a></li>
+            </ul>
+        </aside>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Appointments</h1>
+        </header>
+        <nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                <a href="addpatient.php"><button> <i class="fa-solid fa-user-plus"></i>Add Patient</button></a>
+            </div>
+        </nav>
 
-        <h4>Upcoming Appointments</h4>
+        <h2>Upcoming Appointments</h2>
         <table>
             <thead>
                 <tr>
@@ -202,7 +307,7 @@ if (!$result) {
                 </tr>
             </thead>
             <tbody>
-                <?php while($row = $result->fetch_assoc()): ?>
+                <!-- <?php while($row = $result->fetch_assoc()): ?> -->
                 <tr>
                     <td><?php echo htmlspecialchars($row['id']); ?></td>
                     <td><?php echo htmlspecialchars($row['patient_name']); ?></td>
