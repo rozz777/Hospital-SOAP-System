@@ -232,6 +232,9 @@ $adminName = 'Admin01';
                         <label for="last_name">Last Name:</label>
                         <input type="text" id="last_name" name="last_name">
 
+                        <label for="last_name">Email:</label>
+                        <input type="text" id="email" name="email">
+
                         <label for="dob">Date of Birth:</label>
                         <input type="date" id="dob" name="dob">
 
