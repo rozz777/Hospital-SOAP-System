@@ -327,7 +327,7 @@ $adminName = 'Admin01';
                     <div class="soap-buttons">
                         <a href="Subjective.php"><button id="subjective">Subjective</button></a>
                         <a href="Objective.php"><button id="objective">Objective</button></a>
-                        <a href="Asessment.php"><button id="assessment">Assessment</button></a>
+                        <a href="Assessment.php"><button id="assessment">Assessment</button></a>
                         <a href="Plan.php"><button id="plan">Plan</button></a>
                     </div>
                 </div>
