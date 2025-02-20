@@ -251,6 +251,8 @@ $adminName = 'Admin01';
         .soap-buttons button#subjective{
             background-color: #8EC3D3FF;
             color: black;
+            border: none;
+
         }
 
     </style>
@@ -301,23 +303,24 @@ $adminName = 'Admin01';
                     <div class="container">
                     <div class="forms">
                         <label for="chief_complaint">Chief Complaint:</label>
-                        <input type="text" id="chief_complaint" name="chief_complaint">
+                        <input type="text" id="chief_complaint" name="chief_complaint" placeholder="e.g., Headache">
 
                         <label for="hpi">History of Present Illness (HPI):</label>
-                        <input type="text" id="hpi" name="hpi">
+                        <input type="text" id="hpi" name="hpi" placeholder="e.g., Started 3 days ago, worsens at night">
 
                         <label for="past_medical_history">Past Medical History:</label>
-                        <input type="text" id="past_medical_history" name="past_medical_history">
+                        <input type="text" id="past_medical_history" name="past_medical_history" placeholder="e.g., Hypertension, Diabetes">
 
                         <label for="current_medications">Current Medications:</label>
-                        <input type="text" id="current_medications" name="current_medications">
+                        <input type="text" id="current_medications" name="current_medications" placeholder="e.g., Paracetamol, Metformin">
 
                         <label for="allergies">Allergies:</label>
-                        <input type="text" id="allergies" name="allergies">
+                        <input type="text" id="allergies" name="allergies" placeholder="e.g., Penicillin">
 
                         <label for="family_social_history">Family & Social History:</label>
-                        <input type="text" id="family_social_history" name="family_social_history">
+                        <input type="text" id="family_social_history" name="family_social_history" placeholder="e.g., Family history of hypertension">
                     </div>
+
 
                         <div class="buttons">
                             <button id="save">Save</button>
@@ -327,7 +330,7 @@ $adminName = 'Admin01';
                     <div class="soap-buttons">
                         <a href="Subjective.php"><button id="subjective">Subjective</button></a>
                         <a href="Objective.php"><button id="objective">Objective</button></a>
-                        <a href="Asessment.php"><button id="assessment">Assessment</button></a>
+                        <a href="Assessment.php"><button id="assessment">Assessment</button></a>
                         <a href="Plan.php"><button id="plan">Plan</button></a>
                     </div>
                 </div>

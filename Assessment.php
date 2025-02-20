@@ -248,10 +248,11 @@ $adminName = 'Admin01';
             opacity: 0.8; 
         }
 
-        .soap-buttons button#plan{
+        .soap-buttons button#assessment{
             background-color: #8EC3D3FF;
             color: black;
             border: none;
+
         }
 
     </style>
@@ -286,7 +287,7 @@ $adminName = 'Admin01';
 
         <div class="top">
              <div class="soapnote">
-                <h2>PLAN</h2>
+                <h2>ASSESSMENT</h2>
             </div>
 
             <div class="patients">
@@ -301,16 +302,12 @@ $adminName = 'Admin01';
                 <div class="content-wrapper">
                     <div class="container">
                     <div class="forms">
-                        <label for="treatment">Treatment:</label>
-                        <input type="text" id="treatment" name="treatment" placeholder="e.g., physical therapy, wound care">
+                        <label for="diagnosis">Diagnosis:</label>
+                        <input type="text" id="diagnosis" name="diagnosis" placeholder="e.g., Hypertension">
 
-                        <label for="medications">Medications:</label>
-                        <input type="text" id="medications" name="medications" placeholder="e.g., Paracetamol 500mg, BID for 3 days">
-
-                        <label for="follow_up">Follow-up:</label>
-                        <input type="text" id="follow_up" name="follow_up" placeholder="e.g., Return in 1 week for reassessment">
+                        <label for="differential_diagnosis">Differential Diagnosis:</label>
+                        <input type="text" id="differential_diagnosis" name="differential_diagnosis" placeholder="e.g., Migraine, Anxiety">
                     </div>
-
 
                         <div class="buttons">
                             <button id="save">Save</button>
@@ -320,7 +317,7 @@ $adminName = 'Admin01';
                     <div class="soap-buttons">
                         <a href="Subjective.php"><button id="subjective">Subjective</button></a>
                         <a href="Objective.php"><button id="objective">Objective</button></a>
-                        <a href="Assessment.php"><button id="assessment">Assessment</button></a>
+                        <a href="Asessment.php"><button id="assessment">Assessment</button></a>
                         <a href="Plan.php"><button id="plan">Plan</button></a>
                     </div>
                 </div>
