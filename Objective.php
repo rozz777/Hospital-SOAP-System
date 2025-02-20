@@ -251,6 +251,8 @@ $adminName = 'Admin01';
         .soap-buttons button#objective{
             background-color: #8EC3D3FF;
             color: black;
+            border: none;
+
         }
 
     </style>

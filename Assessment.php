@@ -251,6 +251,8 @@ $adminName = 'Admin01';
         .soap-buttons button#assessment{
             background-color: #8EC3D3FF;
             color: black;
+            border: none;
+
         }
 
     </style>
@@ -301,15 +303,11 @@ $adminName = 'Admin01';
                     <div class="container">
                     <div class="forms">
                         <label for="diagnosis">Diagnosis:</label>
-                        <input type="text" id="diagnosis" name="diagnosis">
+                        <input type="text" id="diagnosis" name="diagnosis" placeholder="e.g., Hypertension">
 
                         <label for="differential_diagnosis">Differential Diagnosis:</label>
-                        <input type="text" id="differential_diagnosis" name="differential_diagnosis">
-
-                        <label for="prognosis">Prognosis:</label>
-                        <input type="text" id="prognosis" name="prognosis">
+                        <input type="text" id="differential_diagnosis" name="differential_diagnosis" placeholder="e.g., Migraine, Anxiety">
                     </div>
-
 
                         <div class="buttons">
                             <button id="save">Save</button>
