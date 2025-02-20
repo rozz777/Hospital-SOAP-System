@@ -33,9 +33,19 @@ $conn->close();
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Lexend", serif; }
-        html, body { height: 100%; }
-        body { display: flex; }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: "Lexend", serif; 
+        }
+        html, body { 
+            height: 100%; 
+        }
+        body { 
+            display: flex; 
+        }
+
         .sidebar {
             width: 320px;
             background-color: #176B87;
@@ -44,6 +54,8 @@ $conn->close();
             height: 100%;
             box-sizing: border-box;
             text-wrap: nowrap;
+            display: flex;
+            flex-direction: column; 
         }
 
         .profile {
@@ -54,7 +66,7 @@ $conn->close();
             flex-direction: column;
         }
 
-        .profile-icon img{
+        .profile-icon img {
             width: 100px;
             height: 100px;
             background-color: white;
@@ -70,9 +82,10 @@ $conn->close();
         aside ul {
             list-style: none;
             padding: 0;
+            flex-grow: 1; 
         }
 
-        aside ul li:hover{
+        aside ul li:hover {
             border-bottom: 1px solid white;
         }
 
@@ -86,7 +99,6 @@ $conn->close();
             font-size: 22px;
             padding: 10px;
         }
-
 
         aside ul li i {
             font-size: 26px;
@@ -154,11 +166,28 @@ $conn->close();
             background-color: #09546DFF;
         }
 
-        .patient-list table { width: 100%; border-collapse: collapse; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
-        .patient-list th, .patient-list td { border: 1px solid gray; padding: 10px; text-align: center; }
-        .patient-list th { background-color: #B2DBED; color: black; font-weight: 600; }
+        .patient-list table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
+        }
+        .patient-list th, .patient-list td { 
+            border: 1px solid gray; 
+            padding: 10px; 
+            text-align: center; 
+        }
+        .patient-list th { 
+            background-color: #B2DBED; 
+            color: black; 
+            font-weight: 600; 
+        }
         .patient-list td .edit, .patient-list td .delete, .patient-list td .add-appointment {
-            padding: 10px; color: white; border: none; cursor: pointer; margin-right: 10px; border-radius: 10px;
+            padding: 10px; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            margin-right: 10px; 
+            border-radius: 10px;
         }
         .patient-list td .edit { background-color: #CDC113; }
         .patient-list td .edit:hover { background-color: #A79F30FF; }
