@@ -1,220 +1,337 @@
+<?php
+$profileImage = 'img/hehe.jpg';
+$adminName = 'Admin01';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>SOAP Notes</title>
+    <title>SOAP NOTES</title>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: "Lexend", serif;
         }
+
+        html, body {
+            height: 100%;
+        }
+
         body {
             display: flex;
-            font-family: 'Lexend', sans-serif;
-            overflow: hidden;
-            height: 100vh;
-            font-family: lexend;
         }
+
         .sidebar {
-            width: 280px;
+            width: 320px;
             background-color: #176B87;
             color: white;
-            padding: 20px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 15px;
+            height: 100%;
+            box-sizing: border-box;
+            text-wrap: nowrap;
         }
+
         .profile {
-            text-align: center;
+            display: flex;
+            align-items: center;
             margin-bottom: 20px;
+            justify-content: center;
+            flex-direction: column;
         }
-        .profile-icon {
+
+        .profile-icon img {
             width: 100px;
             height: 100px;
             background-color: white;
             border-radius: 50%;
-            margin-bottom: 10px;
+            margin-right: 10px;
         }
+
         .profile-name {
             font-size: 18px;
-            font-weight: bold;
+            padding-top: 10px;
         }
+
         aside ul {
             list-style: none;
-            width: 100%;
+            padding: 0;
         }
+
+        aside ul li a:hover {
+            color: #ccc;
+        }
+
         aside ul li {
-            padding: 15px;
-            text-align: left;
+            padding: 25px 10px;
         }
+
         aside ul li a {
             color: white;
             text-decoration: none;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 22px;
+            padding: 10px;
         }
+
+        aside ul li i {
+            font-size: 26px;
+        }
+
         .main-content {
             flex-grow: 1;
+            padding: 20px 50px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        
+        .title h1 {
+            margin-top: 30px;
+            font-size: 35px;
+            font-weight: 600;
+            margin-left: 30px;
+            color: #176B87;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #176B87;
             padding: 20px;
+            color: white;
+            border-radius: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            /* margin-top: 30px; */
+        }
+
+        .top{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .soapnote h2{
+            font-size: 40px;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        .patients select{
+            font-size: 17px;
+            padding: 8px;
+            border-radius: 12px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .main {
+            background-color: #C0D7E2FF;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border: 1px solid white;
+            border-radius: 15px;    
+        }
+
+        
+
+        .container {
+            background-color: #E8F3F8FF;
+            padding: 30px 40px;
+            border: 1px solid gray;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 30px;
+        }
+
+        .forms {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .forms label {
+            font-weight: 600;
+        }
+
+        .forms input, .forms select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between; 
+            margin-top: 20px; 
+        }
+
+        .buttons button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.2);
+            width: 100%; 
+        }
+
+        .buttons #save {
+            background-color: #0B9C2AFF;
+            color: white;
+        }
+
+        .buttons #save:hover {
+            background-color: #046E16FF;
+        }
+
+        .content-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: auto;
-        }
-        header {
             width: 100%;
-            background-color: #176B87;
-            padding: 15px;
-            color: white;
-            border-radius: 10px;
-            text-align: left;
-            margin-bottom: 20px;
         }
-        .dropdown{
-            margin-left: 85%;
-            margin-bottom: 2%;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .dropdown select {
-        padding: 8px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        }
-        .soap-section {
-            background: #d1e7f1;
-            padding: 20px;
-            border-radius: 10px;
-            width: 110%;
-            max-width: 1030px;
-        }
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .form-container label {
-            font-weight: bold;
-        }
-        .form-container input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .save-btn {
-            background: green;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            align-self: flex-end;
-        }
-        .footer-buttons {
+
+        .soap-buttons {
             display: flex;
             justify-content: center;
-            gap: 10px;
             margin-top: 20px;
-            width: 90%;
-            max-width: 800px;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 25px;
         }
-        .footer-buttons button {
-            padding: 10px 15px;
-            border: none;
-            background: #1e586e;
+
+        .soap-buttons button {
+            padding: 10px;
+            font-size: 20px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.2);
+            width: 100%; 
+            background-color: #176B87;
             color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            flex: 1;
         }
-        .footer-buttons .subjective-btn {
-            background: #B2DBED;
+
+        .soap-buttons button:hover {
+            opacity: 0.8; 
+        }
+
+        .soap-buttons button#subjective{
+            background-color: #8EC3D3FF;
             color: black;
         }
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-                overflow-y: auto;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-                flex-direction: row;
-                justify-content: space-around;
-                padding: 10px;
-            }
-            .profile {
-                display: none;
-            }
-            .main-content {
-                padding: 10px;
-            }
-            .footer-buttons {
-                flex-wrap: wrap;
-            }
-        }
+
     </style>
 </head>
 <body>
     <div class="sidebar">
         <div class="profile">
-            <div class="profile-icon"></div>
-            <div class="profile-name">Admin01</div>
+            <div class="profile-icon">
+                <img src="<?php echo $profileImage; ?>" alt="Profile Image">
+            </div>
+            <div class="profile-name"><?php echo $adminName; ?></div>
         </div>
         <aside>
             <ul>
-                <li><a href="#"><i class="fa-solid fa-hospital-user"></i> Patient Management</a></li>
-                <li><a href="#"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
-                <li><a href="#"><i class="fa-solid fa-notes-medical"></i> SOAP Notes</a></li>
-                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                <li><i class="fa-solid fa-hospital-user" style="color: #ffffff;"></i>
+                <a href="#">Patient Management</a></li>
+                <li><i class="fa-solid fa-calendar-check" style="color: #ffffff;"></i>
+                <a href="#">Appointments</a></li>
+                <li><i class="fa-solid fa-notes-medical" style="color: #ffffff;"></i>
+                <a href="#">SOAP Notes</a></li>
+                <li><i class="fa-solid fa-gear" style="color: #ffffff;"></i>
+                <a href="#">Settings</a></li>
+                <li><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+                <a href="#">Logout</a></li>
             </ul>
         </aside>
     </div>
     <div class="main-content">
         <header>
-            <h1>Subjective</h1>
+            <h1>SOAP NOTES</h1>
         </header>
-        <div class="dropdown">
-    <select>
-        <option value="" disabled selected>Select a patient</option>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-    </select>
-</div>
-        <section class="soap-section">
-            <div class="form-container">
-                <label>Presenting Symptoms:</label>
-                <input type="text">
-                <label>History of Present Illness (HPI):</label>
-                <input type="text">
-                <label>Medical History (PMH):</label>
-                <input type="text">
-                <label>Allergies:</label>
-                <input type="text">
-                <label>Medication:</label>
-                <input type="text">
-                <label>Family and Social History:</label>
-                <input type="text">
-                <button class="save-btn">Save</button>
+
+        <div class="top">
+             <div class="soapnote">
+                <h2>SUBJECTIVE</h2>
+            </div>
+
+            <div class="patients">
+                <select id="sex" name="sex" style="margin-left: auto; margin-right: 30px;">
+                    <option value="" selected disabled>Select a patient</option>
+                </select>
+            </div>
+        </div>
+       
+        <section>
+            <div class="main">
+                <div class="content-wrapper">
+                    <div class="container">
+                    <div class="forms">
+                        <label for="chief_complaint">Chief Complaint:</label>
+                        <input type="text" id="chief_complaint" name="chief_complaint">
+
+                        <label for="hpi">History of Present Illness (HPI):</label>
+                        <input type="text" id="hpi" name="hpi">
+
+                        <label for="past_medical_history">Past Medical History:</label>
+                        <input type="text" id="past_medical_history" name="past_medical_history">
+
+                        <label for="current_medications">Current Medications:</label>
+                        <input type="text" id="current_medications" name="current_medications">
+
+                        <label for="allergies">Allergies:</label>
+                        <input type="text" id="allergies" name="allergies">
+
+                        <label for="family_social_history">Family & Social History:</label>
+                        <input type="text" id="family_social_history" name="family_social_history">
+                    </div>
+
+                        <div class="buttons">
+                            <button id="save">Save</button>
+                        </div>
+                    </div>
+
+                    <div class="soap-buttons">
+                        <a href="Subjective.php"><button id="subjective">Subjective</button></a>
+                        <a href="Objective.php"><button id="objective">Objective</button></a>
+                        <a href="Asessment.php"><button id="assessment">Assessment</button></a>
+                        <a href="Plan.php"><button id="plan">Plan</button></a>
+                    </div>
+                </div>
             </div>
         </section>
-        <div class="footer-buttons">
-            <button class="subjective-btn">Subjective</button>
-            <button onclick="location.href='Objective.php'">Objective</button>
-            <button onclick="location.href='Assesment.php'">Assesment</button>
-            <button onclick="location.href='Plan.php'">Plan</button>
-        </div>
-    </div>
 </body>
 </html>
